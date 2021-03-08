@@ -21,7 +21,7 @@ public class juego {
             }
 
             System.out.println("\nPresentando ejercito de "+tempo);
-
+            //ejemplo con operador ternario
             /**System.out.println("\nPresentando ejercito de "+
                             (ejercito[0] instanceof Bestias?"Bestias":"Herores")
                             );**/
