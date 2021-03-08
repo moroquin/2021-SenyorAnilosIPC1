@@ -9,3 +9,9 @@ javac -d ./build/ ./src/*.java
 ```bash
 java -classpath ./build Ejecutable
 ```
+
+**Si no ha creado la carpeta build, debe hacer esto primero**
+```bash
+mkdir build
+```
+*Debe estar úbicado en la raíz de su proyecto*
