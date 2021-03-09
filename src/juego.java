@@ -4,6 +4,8 @@ public class juego {
     private Heroes ejercitoHeroes[];
 
     private static int Cantidad = 5;
+
+    //private int contadorHumanos;
     
     public juego(){
         ejercitoBestias = new Bestias[Cantidad];
@@ -44,14 +46,17 @@ public class juego {
         this.presentarPersonajes(ejercitoBestias);
         this.presentarPersonajes(ejercitoHeroes);
 
+        System.out.println("Instancias de Humano " + Humano.getInstancias());
+        System.out.println("Instancias de Heroe " + Heroes.getInstancias());
+        System.out.println("Instancias de Personajes " + Personaje.getInstancias());
     }
 
     public void inicializarHeroes(){
-        ejercitoHeroes[0]= new Elfo("legolas");
+        ejercitoHeroes[0]= new Humano("legolas");
         ejercitoHeroes[1]= new Hobbit("frodo");
         ejercitoHeroes[2] = new Humano("Aragon");
         ejercitoHeroes[3]= new Elfo("legolas2");
-        ejercitoHeroes[4]= new Hobbit("frodo3");
+        ejercitoHeroes[4]= new Humano("Boromir");
     }
 
     public void inicializarBestias(){

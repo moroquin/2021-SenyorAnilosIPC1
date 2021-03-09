@@ -6,12 +6,15 @@ public class Personaje {
     protected String nombre;
     protected boolean esHeroe;
 
+    private static int instanciasPersonajes;
+
     public Personaje(int vida, int armadura, int ataque, String nombre, boolean esHeroe) {
         this.vida = vida;
         this.ataque = ataque;
         this.armadura = armadura;
         this.nombre = nombre;
         this.esHeroe = esHeroe;
+        instanciasPersonajes++;
     }
 
     public void saludar(){
@@ -36,6 +39,10 @@ public class Personaje {
 
     public boolean get() {
         return this.esHeroe;
+    }
+
+    public static int getInstancias(){
+        return Personaje.instanciasPersonajes;
     }
 
 }
