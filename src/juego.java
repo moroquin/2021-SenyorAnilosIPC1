@@ -57,7 +57,7 @@ public class juego {
     public void inicializarHeroes(){
         int random = 0;
         for (int i = 0; i < ejercitoHeroes.length; i++) {
-            random = Dado.tirarDado(0, 2, 1);
+            random = Dado.tirarDado(0, 2, 1, false);
             switch (random) {
                 case 0:
                     ejercitoHeroes[i] = new Humano("Humano "+Humano.getInstancias());
@@ -76,10 +76,20 @@ public class juego {
     }
 
     public void inicializarBestias(){
-        ejercitoBestias[0]= new Orco("no se");
-        ejercitoBestias[1]= new Trasgo("trasgo 1");
-        ejercitoBestias[2] = new Orco("orco 2");
-        ejercitoBestias[3]= new Trasgo("Trasgo2");
-        ejercitoBestias[4]= new Orco("orco 3");
+        int random = 0;
+        for (int i = 0; i < ejercitoHeroes.length; i++) {
+            random = Dado.tirarDado(0, 1, 1, false);
+            switch (random) {
+                case 0:
+                    ejercitoBestias[i] = new Trasgo("Trasgo "+Trasgo.getInstancias());
+                    break;
+                case 1:
+                    ejercitoBestias[i] = new Orco("Orco "+Orco.getInstancias());
+                    break;
+                default:
+                    ejercitoBestias[i] = new Orco("Orco "+Orco.getInstancias());
+                    break;
+            }
+        }
     }
 }
