@@ -40,8 +40,25 @@ public class juego {
 
     public void jugar(){
         System.out.println("Bienvenido al juego del señor de los anillos: \n\n");
-        this.inicializarBestias();
+        
+        //Dado tmp = new Dado();
+        //tmp.tirarDado(0, 100, 3);
+        Dado.tirarDado(0, 100, 3);
+        System.out.println("         ");
+        //tmp.tirarDado(0, 5, 1);
+        Dado.tirarDado(0, 5, 1);
+        System.out.println("         ");
+        //tmp.tirarDado(3, 6, 3);
+        Dado.tirarDado(3, 6, 3);
+        System.out.println("         ");
+        System.out.println("         ");
+
         this.inicializarHeroes();
+        
+        /**this.inicializarBestias();
+        
+
+
 
         this.presentarPersonajes(ejercitoBestias);
         this.presentarPersonajes(ejercitoHeroes);
@@ -49,9 +66,11 @@ public class juego {
         System.out.println("Instancias de Humano " + Humano.getInstancias());
         System.out.println("Instancias de Heroe " + Heroes.getInstancias());
         System.out.println("Instancias de Personajes " + Personaje.getInstancias());
+        **/
     }
 
     public void inicializarHeroes(){
+        Dado.tirarDado(3, 6, 3);
         ejercitoHeroes[0]= new Humano("legolas");
         ejercitoHeroes[1]= new Hobbit("frodo");
         ejercitoHeroes[2] = new Humano("Aragon");
