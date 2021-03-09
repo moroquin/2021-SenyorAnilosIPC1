@@ -48,10 +48,14 @@ public class juego {
         this.presentarPersonajes(ejercitoBestias);
         this.presentarPersonajes(ejercitoHeroes);
 
-        System.out.println("Instancias de Humano " + Humano.getInstancias());
-        System.out.println("Instancias de Heroe " + Heroes.getInstancias());
-        System.out.println("Instancias de Hobbit " + Hobbit.getInstancias());
+        System.out.println("\n\n\n");
+        this.pelea();
         
+    }
+
+    public void pelea(){
+        ejercitoBestias[0].recibirAtaque(ejercitoHeroes[0]);
+        ejercitoHeroes[0].recibirAtaque(ejercitoBestias[0]);
     }
 
     public void inicializarHeroes(){

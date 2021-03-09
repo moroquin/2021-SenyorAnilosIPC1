@@ -17,6 +17,27 @@ public class Personaje {
         instanciasPersonajes++;
     }
 
+    public int obtenerArmadura(Personaje atacante){
+        return this.getArmadura();
+    }
+
+    public int obtenerAtaque(Personaje defensor){
+        return this.getAtaque();
+    }
+
+    public void recibirAtaque(Personaje atacante){
+        System.out.println(" " + atacante.getNombre() + " atacará a "+ this.getNombre());
+
+        int danyoRecibido = this.obtenerArmadura(atacante) - atacante.obtenerAtaque(this);
+        if (danyoRecibido <= 0){
+            this.vida += danyoRecibido;
+        }
+        else{
+            danyoRecibido = 0;
+        }
+        System.out.println(" "+atacante.getNombre()+  " ataco a  " + this.getNombre() + " hizo daño: " + danyoRecibido  + " le queda vida: "+this.getVida());
+    }
+
     public void saludar(){
         System.out.println("Hola soy " + this.nombre);
     }
