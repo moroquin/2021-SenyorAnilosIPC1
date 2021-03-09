@@ -3,16 +3,17 @@ public class juego {
     private Bestias ejercitoBestias[];
     private Heroes ejercitoHeroes[];
 
-    private static int Cantidad = 5;
+    private final int CANTIDAD = 5;
 
     //private int contadorHumanos;
     
     public juego(){
-        ejercitoBestias = new Bestias[Cantidad];
-        ejercitoHeroes = new Heroes[Cantidad];
+        ejercitoBestias = new Bestias[CANTIDAD];
+        ejercitoHeroes = new Heroes[CANTIDAD];
     }
 
     public void presentarPersonajes(Personaje ejercito[]){
+
         if (ejercito.length> 0 ){
             String tempo = "";
             if (ejercito[0] instanceof Bestias){
@@ -41,41 +42,37 @@ public class juego {
     public void jugar(){
         System.out.println("Bienvenido al juego del señor de los anillos: \n\n");
         
-        //Dado tmp = new Dado();
-        //tmp.tirarDado(0, 100, 3);
-        Dado.tirarDado(0, 100, 3);
-        System.out.println("         ");
-        //tmp.tirarDado(0, 5, 1);
-        Dado.tirarDado(0, 5, 1);
-        System.out.println("         ");
-        //tmp.tirarDado(3, 6, 3);
-        Dado.tirarDado(3, 6, 3);
-        System.out.println("         ");
-        System.out.println("         ");
-
         this.inicializarHeroes();
-        
-        /**this.inicializarBestias();
-        
-
-
+        this.inicializarBestias();
 
         this.presentarPersonajes(ejercitoBestias);
         this.presentarPersonajes(ejercitoHeroes);
 
         System.out.println("Instancias de Humano " + Humano.getInstancias());
         System.out.println("Instancias de Heroe " + Heroes.getInstancias());
-        System.out.println("Instancias de Personajes " + Personaje.getInstancias());
-        **/
+        System.out.println("Instancias de Hobbit " + Hobbit.getInstancias());
+        
     }
 
     public void inicializarHeroes(){
-        Dado.tirarDado(3, 6, 3);
-        ejercitoHeroes[0]= new Humano("legolas");
-        ejercitoHeroes[1]= new Hobbit("frodo");
-        ejercitoHeroes[2] = new Humano("Aragon");
-        ejercitoHeroes[3]= new Elfo("legolas2");
-        ejercitoHeroes[4]= new Humano("Boromir");
+        int random = 0;
+        for (int i = 0; i < ejercitoHeroes.length; i++) {
+            random = Dado.tirarDado(0, 2, 1);
+            switch (random) {
+                case 0:
+                    ejercitoHeroes[i] = new Humano("Humano "+Humano.getInstancias());
+                    break;
+                case 1:
+                    ejercitoHeroes[i] = new Elfo("Elfo "+Elfo.getInstancias());
+                    break;
+                case 2:
+                    ejercitoHeroes[i] = new Hobbit("Hobbit "+Hobbit.getInstancias());
+                    break;
+                default:
+                    ejercitoHeroes[i] = new Elfo("Elfo "+Elfo.getInstancias());
+                    break;
+            }
+        }
     }
 
     public void inicializarBestias(){

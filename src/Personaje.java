@@ -18,7 +18,7 @@ public class Personaje {
     }
 
     public void saludar(){
-        System.out.println("Hola soy un heroe " + this.nombre);
+        System.out.println("Hola soy " + this.nombre);
     }
 
     public int getVida() {
